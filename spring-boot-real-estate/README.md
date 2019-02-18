@@ -27,3 +27,12 @@ Using Jar file as a packaged applicationv:
 1. Get the Bar Chart working in React
 2. Get the Listy view woith proper CSS
 3. Add Unit Tests
+
+
+spring-boot-real-estate - spring boot project
+app - react frontend
+my-barchart-app - working bar chart app
+
+Run mongodb
+Run Spring boot
+Run React app - yarn start
