@@ -3,6 +3,8 @@ import './App.css';
 import Home from './components/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import GroupList from './components/GroupList';
+import BarChart from './components/BarChart';
+
 
 class App extends Component {
   render() {
@@ -11,6 +13,7 @@ class App extends Component {
         <Switch>
           <Route path='/' exact={true} component={Home}/>
           <Route path='/realestates' exact={true} component={GroupList}/>
+          <Route path='/barchart' exact={true} component={BarChart}/>
         </Switch>
       </Router>
     )

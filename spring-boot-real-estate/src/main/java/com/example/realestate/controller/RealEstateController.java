@@ -1,6 +1,7 @@
 package com.example.realestate.controller;
 
 import com.example.realestate.model.RealEstate;
+import com.example.realestate.model.RealEstateCount;
 import com.example.realestate.service.RealEstateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,19 +22,26 @@ public class RealEstateController {
 
     /** GET request to return all real estates sorted by Product Type **/
     @RequestMapping(method = RequestMethod.GET)
-    public List<RealEstate> getChargingStationSortedByProductType() {
-        return realEstateService.findChargingStationSortedByProductType();
+    public List<RealEstate> getRealEstatesSortedByProductType() {
+        return realEstateService.findRealEstatesSortedByProductType();
     }
+
+    /** GET request to return all real estates grouped by Post Code **/
+    @RequestMapping(path = "/count", method = RequestMethod.GET)
+    public List<RealEstateCount> getRealEstatesGroupedByPostCode() {
+        return realEstateService.findRealEstatesGroupedByPostCode();
+    }
+
 
     /** GET request to return all real estates **/
     @RequestMapping(path = "/list", method = RequestMethod.GET)
-    public List<RealEstate> getAllChargingStations() {
-        return realEstateService.findAllChargingStations();
+    public List<RealEstate> getAllRealEstates() {
+        return realEstateService.findAllRealEstates();
     }
 
     /** GET request to return real estate based on ID **/
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
-    public Optional<RealEstate> getChargingStationById(@PathVariable String id) {
-        return realEstateService.findChargingStationById(id);
+    public Optional<RealEstate> getRealEstateById(@PathVariable String id) {
+        return realEstateService.findRealEstateById(id);
     }
 }

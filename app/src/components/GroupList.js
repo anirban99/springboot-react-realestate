@@ -22,7 +22,7 @@ class GroupList extends Component {
   //   const response = await fetch('/api/v1/realestates');
   //   const body = await response.json();
   //   this.setState({ groups: body, isLoading: false });
-  // }
+  // }.  width="20%"
 
   render() {
     const {groups, isLoading} = this.state;
@@ -38,6 +38,13 @@ class GroupList extends Component {
         <td>{group.commercializationType}</td>
         <td>{group.features}</td>
         <td>{group.floorSpace}</td>
+        <td>{group.id}</td>
+        <td>{group.priceForTotalArea}</td>
+        <td>{group.realtorCompanyName}</td>
+        <td>{group.realtorName}</td>
+        <td>{group.title}</td>
+        <td>{group.pictureUrl}</td>
+        <td>{group.productType}</td>
       </tr>
     });
 
@@ -49,10 +56,17 @@ class GroupList extends Component {
           <Table className="mt-4">
             <thead>
             <tr>
-              <th width="20%">Address Display</th>
-              <th width="20%">Commercialization Type</th>
+              <th>Address Display</th>
+              <th>Commercialization Type</th>
               <th>Features</th>
-              <th width="10%">Floor Space</th>
+              <th>Floor Space</th>
+              <th>Id</th>
+              <th>Price For Total Area</th>
+              <th>Realtor Company Name</th>
+              <th>Realtor Name</th>
+              <th>Title</th>
+              <th>Picture Url</th>
+              <th>Product Type</th>
             </tr>
             </thead>
             <tbody>

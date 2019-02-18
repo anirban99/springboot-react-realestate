@@ -1,16 +1,19 @@
 package com.example.realestate.service;
 
 import com.example.realestate.model.RealEstate;
+import com.example.realestate.model.RealEstateCount;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface RealEstateService {
 
-    List<RealEstate> findChargingStationSortedByProductType();
+    List<RealEstate> findRealEstatesSortedByProductType();
 
-    List<RealEstate> findAllChargingStations();
+    List<RealEstateCount> findRealEstatesGroupedByPostCode();
 
-    Optional<RealEstate> findChargingStationById(String id);
+    List<RealEstate> findAllRealEstates();
+
+    Optional<RealEstate> findRealEstateById(String id);
 
 }
