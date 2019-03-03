@@ -8,7 +8,7 @@ The project is developed using spring boot as the backend service, react native 
 Since I didn't receive the JSON data file along with the project, I loaded the JSON data manually using the LoadDataRepository.java in the spring boot project.
 
 
-In order to run the project, the user needs to have a mongodb installed locally. The instructions to install mongodb can be found below. After that the follow the sequence :
+In order to run the project, the user needs to have a mongodb installed locally. The instructions to install mongodb can be found below. After that follow the sequence :
 
 Run mongodb
 
@@ -36,6 +36,8 @@ REST API endpoints
 
 
 * **URL**
+
+GET request to return all real estates sorted by Product Type
 
   /api/v1/realestates
 
@@ -113,6 +115,8 @@ REST API endpoints
 
 * **URL**
 
+GET request to return all real estates grouped by Post Code
+
   /api/v1/realestates/count
 
 * **Method:**
@@ -143,6 +147,8 @@ REST API endpoints
   GET http://localhost:8080/api/v1/realestates/count
 
 * **URL**
+
+GET request to return all real estates
 
   /api/v1/realestates/list
 
