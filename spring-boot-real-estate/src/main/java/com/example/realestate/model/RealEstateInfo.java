@@ -1,22 +1,15 @@
 package com.example.realestate.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Embeddable;
-import java.io.Serializable;
 import java.util.List;
 
 @Data
-//@AllArgsConstructor
 @Embeddable
 @Document(collection = "real_estate")
 public class RealEstateInfo {
-
-//    private String add1; //addressToDisplay
-//    private String comm1; //commercializationType
-//    private List<String> fea1; //features
 
     private String addressToDisplay;
     private String commercializationType;

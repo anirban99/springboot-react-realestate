@@ -32,7 +32,6 @@ public class RealEstateController {
         return realEstateService.findRealEstatesGroupedByPostCode();
     }
 
-
     /** GET request to return all real estates **/
     @RequestMapping(path = "/list", method = RequestMethod.GET)
     public List<RealEstate> getAllRealEstates() {

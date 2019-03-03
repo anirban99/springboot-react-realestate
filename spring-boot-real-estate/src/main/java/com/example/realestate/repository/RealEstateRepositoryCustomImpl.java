@@ -2,7 +2,6 @@ package com.example.realestate.repository;
 
 import com.example.realestate.model.RealEstate;
 import com.example.realestate.model.RealEstateCount;
-import com.example.realestate.model.RealEstateInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
@@ -35,7 +34,6 @@ public class RealEstateRepositoryCustomImpl implements RealEstateRepositoryCusto
 
         System.out.println("agg " +agg);
 
-        //Convert the aggregation result into a List
         AggregationResults<RealEstateCount> groupResults
             = mongoTemplate.aggregate(agg, RealEstate.class, RealEstateCount.class);
 

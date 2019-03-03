@@ -8,6 +8,11 @@ public class RealEstateCount {
     private String addressToDisplay;
     private long total;
 
+    public RealEstateCount(String addressToDisplay, long total) {
+        this.addressToDisplay = addressToDisplay;
+        this.total = total;
+    }
+
     public String getAddressToDisplay() {
         return addressToDisplay;
     }
