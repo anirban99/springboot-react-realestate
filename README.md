@@ -20,7 +20,9 @@ Run Spring boot
 
 Run React app
 
-	yarn start
+    npm install
+
+	npm start
 
 
 **Frontend URL**
@@ -260,6 +262,7 @@ Spring boot project starts on the Port number 8080
 
 2. From the command line use:
 
-	yarn start
+    npm install
+	npm start
 
 React application starts on the Port number 3000
