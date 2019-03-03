@@ -46,6 +46,7 @@ REST API endpoints
 * **Success Response:**
   
   * **Code:** 200 <br />
+  	**Content-Type:** application/json <br />
     **Content:** `[
     {
         "id": "5c7c37dd8947d043dd41afb9",
@@ -110,34 +111,112 @@ REST API endpoints
 
   GET http://localhost:8080/api/v1/realestates
 
+* **URL**
 
+  /api/v1/realestates/count
 
+* **Method:**
 
-1. GET request to return all real estates sorted by Product Type 
+  `GET` 
 
-	GET http://localhost:8080/api/v1/realestates
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+  	**Content-Type:** application/json <br />
+    **Content:** `[
+    {
+        "addressToDisplay": "10589, Berlin",
+        "total": 1
+    },
+    {
+        "addressToDisplay": "10179, Berlin",
+        "total": 1
+    },
+    {
+        "addressToDisplay": "10178, Berlin",
+        "total": 1
+    }
+]`
 
-	Success Response : 200 OK
+* **Sample Call:**
 
-	Content-Type : JSON 
+  GET http://localhost:8080/api/v1/realestates/count
 
+* **URL**
 
+  /api/v1/realestates/list
 
-2. GET request to return all real estates grouped by Post Code
+* **Method:**
 
-	GET http://localhost:8080/api/v1/realestates/count
+  `GET` 
 
-	Success Response : 200 OK
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+  	**Content-Type:** application/json <br />
+    **Content:** `[
+    {
+        "id": "5c7be4c58947d07d3f3fd649",
+        "name": "Berlin",
+        "resultListEntries": {
+            "addressToDisplay": "10178, Berlin",
+            "commercializationType": "RENT",
+            "features": [
+                "2 Bedroom, Kitchen, Bathroom"
+            ],
+            "floorSpace": "80 sq. m",
+            "docId": "65573128",
+            "priceForTotalArea": "1100 EUR",
+            "realtorCompanyName": "EB Immo",
+            "realtorName": "Michael",
+            "title": "EBM",
+            "pictureUrl": "www.google.com",
+            "productType": "L"
+        }
+    },
+    {
+        "id": "5c7be4c58947d07d3f3fd64a",
+        "name": "Berlin",
+        "resultListEntries": {
+            "addressToDisplay": "10179, Berlin",
+            "commercializationType": "BUY",
+            "features": [
+                "1 Bedroom, Kitchen, Bathroom"
+            ],
+            "floorSpace": "50 sq. m",
+            "docId": "65573129",
+            "priceForTotalArea": "700 EUR",
+            "realtorCompanyName": "Best Immo",
+            "realtorName": "Eric",
+            "title": "BI",
+            "pictureUrl": "www.google.com",
+            "productType": "S"
+        }
+    },
+    {
+        "id": "5c7be4c58947d07d3f3fd64b",
+        "name": "Berlin",
+        "resultListEntries": {
+            "addressToDisplay": "10589, Berlin",
+            "commercializationType": "BUY",
+            "features": [
+                "3 Bedroom, Kitchen, Bathroom, Balcony"
+            ],
+            "floorSpace": "90 sq. m",
+            "docId": "65573130",
+            "priceForTotalArea": "1300 EUR",
+            "realtorCompanyName": "Immowelt",
+            "realtorName": "Christian",
+            "title": "IW",
+            "pictureUrl": "www.google.com",
+            "productType": "L"
+        }
+    }
+]`
 
-	Content-Type : JSON
+* **Sample Call:**
 
-3. GET request to return all real estates
-
-	GET http://localhost:8080/api/v1/realestates/list
-
-	Success Response : 200 OK
-
-	Content-Type : JSON
+  GET http://localhost:8080/api/v1/realestates/list
 
 
 **To Configure MongoDB locally**
