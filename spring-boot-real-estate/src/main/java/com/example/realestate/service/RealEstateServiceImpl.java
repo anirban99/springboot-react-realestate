@@ -2,6 +2,7 @@ package com.example.realestate.service;
 
 import com.example.realestate.model.RealEstate;
 import com.example.realestate.model.RealEstateCount;
+import com.example.realestate.model.RealEstateInfo;
 import com.example.realestate.repository.RealEstateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -22,7 +23,8 @@ public class RealEstateServiceImpl implements RealEstateService {
 
     @Override
     public List<RealEstate> findRealEstatesSortedByProductType() {
-        return realEstateRepository.findAll(new Sort(Sort.Direction.ASC, "productType"));
+        return realEstateRepository.findAll(new Sort(Sort.Direction.ASC, "resultListEntries.productType"));
+//        return realEstateRepository.findAll(new Sort(Sort.Direction.ASC, new RealEstateInfo().getProductType()));
     }
 
     @Override

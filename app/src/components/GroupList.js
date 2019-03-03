@@ -22,29 +22,32 @@ class GroupList extends Component {
   //   const response = await fetch('/api/v1/realestates');
   //   const body = await response.json();
   //   this.setState({ groups: body, isLoading: false });
-  // }.  width="20%"
+  // }.  width="20%"    commercializationType
+
 
   render() {
+
     const {groups, isLoading} = this.state;
 
     if (isLoading) {
       return <p>Loading...</p>;
     }
 
+    const name = groups.map(group=>{ return group.name});
+
     const groupList = groups.map(group => {
-      const address = `${group.address || ''} ${group.city || ''} ${group.stateOrProvince || ''}`;
       return <tr key={group.id}>
-        <td style={{whiteSpace: 'nowrap'}}>{group.addressToDisplay}</td>
-        <td>{group.commercializationType}</td>
-        <td>{group.features}</td>
-        <td>{group.floorSpace}</td>
-        <td>{group.id}</td>
-        <td>{group.priceForTotalArea}</td>
-        <td>{group.realtorCompanyName}</td>
-        <td>{group.realtorName}</td>
-        <td>{group.title}</td>
-        <td>{group.pictureUrl}</td>
-        <td>{group.productType}</td>
+        <td style={{whiteSpace: 'nowrap'}}>{group.resultListEntries.addressToDisplay}</td>
+        <td>{group.resultListEntries.commercializationType}</td>
+        <td>{group.resultListEntries.features}</td>
+        <td>{group.resultListEntries.floorSpace}</td>
+        <td>{group.resultListEntries.docId}</td>
+        <td>{group.resultListEntries.priceForTotalArea}</td>
+        <td>{group.resultListEntries.realtorCompanyName}</td>
+        <td>{group.resultListEntries.realtorName}</td>
+        <td>{group.resultListEntries.title}</td>
+        <td>{group.resultListEntries.pictureUrl}</td>
+        <td>{group.resultListEntries.productType}</td>
       </tr>
     });
 
@@ -53,6 +56,7 @@ class GroupList extends Component {
         <AppNavbar/>
         <Container fluid>
           <h3>Real Estate List</h3>
+          <h1>Berlin</h1>
           <Table className="mt-4">
             <thead>
             <tr>

@@ -2,6 +2,7 @@ package com.example.realestate.repository;
 
 import com.example.realestate.model.RealEstate;
 import com.example.realestate.model.RealEstateCount;
+import com.example.realestate.model.RealEstateInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
@@ -25,17 +26,22 @@ public class RealEstateRepositoryCustomImpl implements RealEstateRepositoryCusto
     public List<RealEstateCount> getRealEstateCount() {
 
         Aggregation agg = newAggregation(
-            match(Criteria.where("addressToDisplay").regex("^10")),
-            group("addressToDisplay").count().as("total"),
+            match(Criteria.where("resultListEntries.addressToDisplay").regex("^10")),
+            group("resultListEntries.addressToDisplay").count().as("total"),
             project("total").and("addressToDisplay").previousOperation(),
             sort(Sort.Direction.ASC, "total")
 
         );
 
+        System.out.println("agg " +agg);
+
         //Convert the aggregation result into a List
         AggregationResults<RealEstateCount> groupResults
             = mongoTemplate.aggregate(agg, RealEstate.class, RealEstateCount.class);
+
+        System.out.println("group results " +groupResults);
         List<RealEstateCount> result = groupResults.getMappedResults();
+        System.out.println("results " +result);
 
         return result;
     }
